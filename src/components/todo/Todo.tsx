@@ -7,7 +7,7 @@ const Todo : React.FC<{items : Model[]; removeHandler : (id : string)=> void ; m
     return (
         <div>
             <ul>
-            {props.items.map((item) => <TodoItem text={item.text} date={item.date} key={item.id} completed={item.completed}  markAsComplete={props.markAsComplete.bind(null,item.id)} removeHandler={props.removeHandler.bind(null,item.id)} > 
+            {props.items.slice(0).reverse().map((item) => <TodoItem text={item.text} date={item.date} key={item.id} completed={item.completed}  markAsComplete={props.markAsComplete.bind(null,item.id)} removeHandler={props.removeHandler.bind(null,item.id)} > 
             </TodoItem>)}
             </ul>
             

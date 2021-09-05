@@ -69,12 +69,13 @@ const NewTodo : React.FC<{ onAddTodo :(text : string) => void}> = (props) => {
                      }
                      props.onAddTodo(enteredText);
                    //  console.log("Hiiiiii")
+                   todoInput.current!.value="";
                  
        }
 
        const onClick = (event : React.MouseEvent) =>{
                             event.preventDefault();
-                            todoInput.current!.value="";
+                            todoInput.current!.value=""; 
 
        }
     return (
@@ -83,7 +84,7 @@ const NewTodo : React.FC<{ onAddTodo :(text : string) => void}> = (props) => {
                   <h3 id="add-tasks"> Add Tasks</h3>
             </AddTask>
                 <form onSubmit={submitHandler} >
-                <input type="text" ref={todoInput} onClick={onClick}   placeholder="What task you want to add?"/>
+                <input type="text" ref={todoInput}    placeholder="What task you want to add?"/>
                 <input type="submit" value="Add task" />           
              </form>
         </Form>
